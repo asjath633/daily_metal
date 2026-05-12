@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 168 76% 50%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 53%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 93% 71%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 168 76% 50%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 53%;
+    --sidebar-primary: 168 76% 50%;
+    --sidebar-primary-foreground: 0 0% 6%;
+    --sidebar-accent: 0 0% 13%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 168 76% 50%;
+  }
+
+  body {
+    font-family: 'Geist Variable', 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: 'Geist Mono Variable', 'Geist Mono', 'SF Mono', 'Fira Code', monospace;
+  }
+
+  .text-gold { color: #FFD700; }
+  .text-silver { color: #C0C0C0; }
+  .text-platinum { color: #E5E4E2; }
+  .text-palladium { color: #b9b9b9; }
+  .bg-gold { background-color: #FFD700; }
+  .bg-silver { background-color: #C0C0C0; }
+  .bg-platinum { background-color: #E5E4E2; }
+  .bg-palladium { background-color: #b9b9b9; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes flash-green {
+  0% { background-color: rgba(45, 212, 191, 0.15); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flash-red {
+  0% { background-color: rgba(248, 113, 113, 0.15); }
+  100% { background-color: transparent; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.flash-green {
+  animation: flash-green 0.3s ease-out;
+}
+
+.flash-red {
+  animation: flash-red 0.3s ease-out;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
