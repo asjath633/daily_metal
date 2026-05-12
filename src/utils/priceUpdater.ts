@@ -113,12 +113,6 @@ export async function fetchAllMetalPrices() {
   };
 }
 
-// Get last updated time
-export function getLastUpdateTime(): string {
-  const saved = localStorage.getItem('lastPriceUpdateTime')
-  return saved ? new Date(saved).toLocaleString() : 'Never'
-}
-
 // Save last updated time
 export function saveUpdateTime(): void {
   localStorage.setItem('lastPriceUpdateTime', new Date().toISOString())
