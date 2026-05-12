@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { RefreshCw, TrendingUp, TrendingDown, Activity } from 'lucide-react'
-import { fetchAllMetalPrices, saveUpdateTime, getLastUpdateTime } from '../utils/priceUpdater'
+import { fetchAllMetalPrices, saveUpdateTime } from '../utils/priceUpdater'
 
 // ─── Types ───────────────────────────────────────────────────────
 
@@ -402,7 +402,7 @@ function Sidebar({ metals, lastUpdated }: { metals: MetalData[]; lastUpdated: nu
 
 // ─── Metal Card ──────────────────────────────────────────────────
 
-function MetalCard({ metal, index }: { metal: MetalData; index: number }) {
+function MetalCard({ metal }: { metal: MetalData }) {
   const [flashClass, setFlashClass] = useState('')
   const prevPriceRef = useRef(metal.price)
   const sparklineData = useRef(generateSparklineData(metal.price))
@@ -725,8 +725,8 @@ export default function Home() {
         {/* Metal Price Cards */}
         <section className="px-6 lg:px-12 mt-2">
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-            {metals.map((metal, i) => (
-              <MetalCard key={metal.symbol} metal={metal} index={i} />
+            {metals.map(metal => (
+              <MetalCard key={metal.symbol} metal={metal} />
             ))}
           </div>
         </section>

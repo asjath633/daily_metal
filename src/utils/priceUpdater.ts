@@ -1,10 +1,6 @@
 // API Configuration - Using Metals-API (free tier available)
 const METALS_API_BASE = 'https://api.metals.live/v1/';
 
-// Alternative API endpoints (no CORS issues)
-const ALPHA_VANTAGE_BASE = 'https://www.alphavantage.co/query?';
-const ALPHA_VANTAGE_KEY = 'demo'; // Free demo key
-
 // Fetch metal price from Metals.live API with robust fallback
 export async function fetchMetalPriceFromAPI(symbol: string): Promise<Record<string, any>> {
   try {
